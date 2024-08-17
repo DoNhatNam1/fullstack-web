@@ -1,0 +1,14 @@
+{
+  "name": "generated-my-api-types",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "generated/my-api-types/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:noop",
+      "outputs": ["{projectRoot}"]
+    }
+  },
+  "implicitDependencies": ["my-api-swagger"]
+}

@@ -37,7 +37,8 @@
       "options": {
         "targetName": "test"
       }
-    }
+    },
+    "@nx-dotnet/core"
   ],
   "generators": {
     "@nx/react": {
@@ -54,6 +55,22 @@
         "style": "tailwind",
         "linter": "eslint"
       }
+    }
+  },
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "build": {
+      "dependsOn": ["^build", "codegen", "^codegen"]
+    },
+    "codegen": {
+      "cache": true
+    },
+    "swagger": {
+      "cache": true
     }
   }
 }
